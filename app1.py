@@ -324,8 +324,8 @@ df_glob_death= df_glob_death.sort_values(by=['Country/Region','Date'])
 df_globe = df_glob_conf.merge(df_glob_death)
 # df_globe = df_globe.drop("Province/State",axis=1)
 df_globe["Country/Region"] = df_globe["Country/Region"].replace("US",'United States')
-#df_pop = pd.read_csv('population_by_country_2020.csv')
-df_pop = pd.read_csv('https://raw.githubusercontent.com/Grinch101/population-by-country/master/population_by_country_2020.csv')
+df_pop = pd.read_csv('population_by_country_2020.csv')
+# df_pop = pd.read_csv('https://raw.githubusercontent.com/Grinch101/population-by-country/master/population_by_country_2020.csv')
 
 df_pop.set_index('Country (or dependency)',inplace=True)
 pop_dic = df_pop.to_dict()['Population (2020)']
@@ -676,7 +676,7 @@ def world_choroleth(feature):
     df4['text_confirmed'] = f" at date: {today} <br>" +  df4['Confirmed'].astype(str) + " Confirmed cases" + "<br>Population at 2020: " +df4['Population'].astype(str) 
     features = ['Confirmed','Death']
     colors = ["Purple","brown"]
-    scale = 80
+    scale = 8000
 
 
 
